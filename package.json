@@ -2,7 +2,8 @@
   "name": "bic-nodejs",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
@@ -22,6 +23,7 @@
   "dependencies": {
     "adm-zip": "^0.5.9",
     "express": "^4.18.2",
+    "iconv-lite": "^0.6.3",
     "node-fetch": "^3.2.10"
   },
   "devDependencies": {
