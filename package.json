@@ -21,7 +21,8 @@
   "homepage": "https://github.com/Andr-Den/bic-nodejs#readme",
   "dependencies": {
     "adm-zip": "^0.5.9",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "node-fetch": "^3.2.10"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
