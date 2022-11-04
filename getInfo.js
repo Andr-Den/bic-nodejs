@@ -19,3 +19,5 @@ zipEntries.forEach(function(zipEntry) {
   const newFileName = 'zip_content.xml'
   newZip.addFile(newFileName, newFileContent, '')
 });
+
+newZip.extractAllTo('./', true)
