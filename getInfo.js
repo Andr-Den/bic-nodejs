@@ -39,4 +39,5 @@ xml2js.parseString(str, (err, result) => {
       }
     ))
   )).flat(1).filter(Boolean)
+  fs.writeFileSync('result.txt', JSON.stringify(resultFile, null, 2) , 'utf-8');
 })
