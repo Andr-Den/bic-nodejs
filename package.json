@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "get-info": "node getInfo.js"
+    "get-info": "node getInfoJob.js"
   },
   "repository": {
     "type": "git",
