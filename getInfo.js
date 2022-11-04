@@ -1,4 +1,9 @@
 import fetch from 'node-fetch'
+import fs from 'fs'
+import iconv from 'iconv-lite'
+import AdmZip from 'adm-zip'
+import xml2js from 'xml2js'
+
 const url = 'http://www.cbr.ru/s/newbik'
 
 fetch(url)
@@ -6,7 +11,6 @@ fetch(url)
   res.body.pipe(fs.createWriteStream('bics.zip'))
 })
 
-import AdmZip from 'adm-zip'
 const zip = new AdmZip('./bics.zip');
 const newZip = new AdmZip();
 
@@ -23,8 +27,6 @@ zipEntries.forEach(function(zipEntry) {
 newZip.extractAllTo('./', true)
 
 const str = newZip.readAsText('zip_content.xml')
-
-import xml2js from 'xml2js'
 
 xml2js.parseString(str, (err, result) => {
   if (err) {
