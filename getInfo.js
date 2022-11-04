@@ -21,3 +21,22 @@ zipEntries.forEach(function(zipEntry) {
 });
 
 newZip.extractAllTo('./', true)
+
+const str = newZip.readAsText('zip_content.xml')
+
+import xml2js from 'xml2js'
+
+xml2js.parseString(str, (err, result) => {
+  if (err) {
+    throw err
+  }
+  const resultFile = result.ED807.BICDirectoryEntry.map((bic) => (
+    bic.Accounts?.map((account) => (
+      {
+        bic: bic.$.BIC,
+        name: bic.ParticipantInfo[0].$.NameP,
+        corrAccount: account.$.Account
+      }
+    ))
+  )).flat(1).filter(Boolean)
+})
